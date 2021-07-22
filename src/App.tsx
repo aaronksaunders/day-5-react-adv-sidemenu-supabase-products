@@ -36,6 +36,7 @@ import { supabase } from "./store/supabase";
 import ProductPage from "./pages/products/ProductPage";
 import AddProductPage from "./pages/products/AddProductPage";
 import ProductDetailPage from "./pages/products/ProductDetailPage";
+import ProductCommentsPage from "./pages/products/ProductCommentsPage";
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState<any>(true);
@@ -90,6 +91,12 @@ const App: React.FC = () => {
               path="/product-detail/:productId"
               exact={true}
               component={ProductDetailPage}
+            />
+
+            <PrivateRoute
+              path="/product-comments/:productId/:productName"
+              exact={true}
+              component={ProductCommentsPage}
             />
 
             {/* PUBLIC ROUTES */}

@@ -4,6 +4,8 @@ import {
   IonButtons,
   IonContent,
   IonHeader,
+  IonItem,
+  IonLabel,
   IonMenuButton,
   IonPage,
   IonTitle,
@@ -57,6 +59,12 @@ const ProductDetailPage: React.FC = () => {
 
       <IonContent fullscreen>
         <pre>{JSON.stringify(product, null, 2)}</pre>
+        <IonItem
+          detail
+          routerLink={`/product-comments/${product?.id}/${product?.name}`}
+        >
+          <IonLabel>Comments</IonLabel>
+        </IonItem>
       </IonContent>
     </IonPage>
   );
